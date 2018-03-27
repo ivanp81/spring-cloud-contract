@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Service
 @FeignClient("address-producer")
-public interface AddressFeignClient {
+public interface AddressClient {
     
-	@RequestMapping(method = RequestMethod.GET, value = "/address/{postCode}", consumes = {MediaType.APPLICATION_JSON_VALUE})
-    public AddressResponse getPostCodeAddress(@PathVariable("postCode") String postCode);
+	@RequestMapping(method = RequestMethod.GET, value = "/addresses/{postcode}", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public AddressResponse getAddresses(@PathVariable("postcode") String postcode);
 }
+ 

@@ -1,22 +1,18 @@
-package com.acme.example.model;
+package com.acme.example.domain.model;
 
-import java.util.Arrays;
 import java.util.List;
 
-public class Address {
-
-	public static final String DUMMY_LATITUDE = "51.390205383300781";
-	public static final String DUMMY_LONGITUDE = "-0.13203597068786621";
+public class PostcodeAddresses {
 	
 	private String latitude;
 	private String longitude;
 	private List<String> addresses;
 
-	public Address() {
+	public PostcodeAddresses() {
 		super();
 	}
  
-	public Address(String latitude, String longitude, List<String> addresses) {
+	public PostcodeAddresses(String latitude, String longitude, List<String> addresses) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -51,10 +47,10 @@ public class Address {
 
 		if (o == null)
 			return false;
-		if (!(o instanceof Address))
+		if (!(o instanceof PostcodeAddresses))
 			return false;
 
-		Address other = (Address) o;
+		PostcodeAddresses other = (PostcodeAddresses) o;
 		
 		if (!this.latitude.equals(other.latitude))
 			return false;
@@ -66,12 +62,5 @@ public class Address {
 
 	public int hashCode() {
 		return latitude.hashCode() * longitude.hashCode();
-	}
-	
-	public static Address makeDummy() throws Exception {
-
-		return new Address(DUMMY_LATITUDE, DUMMY_LONGITUDE,
-				Arrays.asList(new String[] { "10 Watkin Terrace, , , , , Northampton, Northamptonshire",
-						"12 Watkin Terrace, , , , , Northampton, Northamptonshire" }));
 	}
 }

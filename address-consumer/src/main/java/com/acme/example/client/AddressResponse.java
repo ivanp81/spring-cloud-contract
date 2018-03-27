@@ -8,9 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressResponse {
 
-	public static final String DUMMY_LATITUDE = "51.390205383300781";
-	public static final String DUMMY_LONGITUDE = "-0.13203597068786621";
-	
 	private String latitude;
 	private String longitude;
 	private List<String> addresses;
@@ -69,12 +66,5 @@ public class AddressResponse {
 
 	public int hashCode() {
 		return latitude.hashCode() * longitude.hashCode();
-	}
-	
-	public static AddressResponse makeDummy() throws Exception {
-
-		return new AddressResponse(DUMMY_LATITUDE, DUMMY_LONGITUDE,
-				Arrays.asList(new String[] { "10 Watkin Terrace, , , , , Northampton, Northamptonshire",
-						"12 Watkin Terrace, , , , , Northampton, Northamptonshire" }));
 	}
 }
