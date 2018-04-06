@@ -1,6 +1,6 @@
 spring:
   application:
-    name: address-producer
+    name: address-provider
 
 server:
   port: 8090

@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+                
+  address-consumer:
+    container_name: address-consumer
+    environment: 
+      - SPRING_PROFILES_ACTIVE=test
+    build: 
+      context: ./address-consumer
+    image: ivanp81/address-consumer    
+    ports: 
+      - 8080:8080
+    networks:
+      - address-contract-test-network
+ 
+  address-provider:
+    container_name: address-provider
+    environment: 
+      - SPRING_PROFILES_ACTIVE=test
+    build: 
+      context: ./address-provider
+    image: ivanp81/address-provider    
+    ports: 
+      - 8090:8090
+    networks:
+      - address-contract-test-network
+ 
+networks:
+  address-contract-test-network:

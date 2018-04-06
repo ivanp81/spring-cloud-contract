@@ -1,3 +1,3 @@
 ## Spring Cloud Contract Example
 
-Consumer\producer microservices to demonstrate contract test
+Consumer\provider microservices to demonstrate contract test

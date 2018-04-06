@@ -1,4 +1,4 @@
-package com.acme.example.client;
+package com.acme.example.domain.model;
 
 import java.io.Serializable;
 import java.util.List;

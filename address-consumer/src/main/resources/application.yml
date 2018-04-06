@@ -1,3 +1,5 @@
+spring.profiles.active: dev
+
 spring:
   application:
     name: address-consumer
@@ -8,9 +10,25 @@ server:
 feign:
   hystrix:
     enable: false
+
+---
+
+spring:
+  profiles: dev
   
-address-producer:
+address-provider:
   ribbon:
     eureka:
       enabled: false
     listOfServers: localhost:8090
+          
+--- 
+
+spring:
+  profiles: test
+  
+address-provider:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: address-provider:8090

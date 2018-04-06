@@ -10,19 +10,17 @@ import com.acme.example.client.AddressClient;
 import com.acme.example.client.AddressResponse;
 
 @RestController
-public class PostcodeController {
+public class AddressController {
 
-    private final AddressClient addressClient;
+    private AddressClient addressClient;
     
     @Autowired
-	public PostcodeController(AddressClient addressClient) {
-		super();
+	public AddressController(AddressClient addressClient) {
 		this.addressClient = addressClient;
 	}
 
-	@RequestMapping(value = "/postcode/{postcode}/addresses", method = RequestMethod.GET)
-    public AddressResponse getPostCodeAddresses(@PathVariable String postcode) {
-
-        return addressClient.getAddresses(postcode);
+	@RequestMapping(value = "/find/{postCode}", method = RequestMethod.GET)
+    public AddressResponse findByPostCode(@PathVariable String postCode) {
+        return addressClient.findByPostCode(postCode);
     }
 }

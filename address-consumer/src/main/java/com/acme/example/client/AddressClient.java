@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Service
-@FeignClient("address-producer")
+@FeignClient("address-provider")
 public interface AddressClient {
     
-	@RequestMapping(method = RequestMethod.GET, value = "/addresses/{postcode}", consumes = {MediaType.APPLICATION_JSON_VALUE})
-    public AddressResponse getAddresses(@PathVariable("postcode") String postcode);
+	@RequestMapping(method = RequestMethod.GET, value = "/find/{postCode}", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public AddressResponse findByPostCode(@PathVariable("postCode") String postCode);
 }
  
