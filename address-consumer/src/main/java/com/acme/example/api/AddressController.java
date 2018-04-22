@@ -13,14 +13,14 @@ import com.acme.example.client.AddressResponse;
 public class AddressController {
 
     private AddressClient addressClient;
-    
-    @Autowired
-	public AddressController(AddressClient addressClient) {
-		this.addressClient = addressClient;
-	}
 
-	@RequestMapping(value = "/find/{postCode}", method = RequestMethod.GET)
+    @Autowired
+    public AddressController(AddressClient addressClient) {
+	this.addressClient = addressClient;
+    }
+
+    @RequestMapping(value = "/find/{postCode}", method = RequestMethod.GET)
     public AddressResponse findByPostCode(@PathVariable String postCode) {
-        return addressClient.findByPostCode(postCode);
+	return addressClient.findByPostCode(postCode);
     }
 }

@@ -12,16 +12,16 @@ import com.acme.example.Application;
 import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {Application.class})
-@AutoConfigureStubRunner(ids = {"com.acme.example:address-provider:+:stubs:2222"}, workOffline = true)
+@SpringBootTest(classes = { Application.class })
+@AutoConfigureStubRunner(ids = { "com.acme.example:address-provider:+:stubs:2222" }, workOffline = true)
 public class ContractScenario1Base {
 
-	@Autowired
-	private WebApplicationContext context;
-	
-	@Before
-	public void setup() {
-		RestAssuredMockMvc.webAppContextSetup(context);
-	}
+    @Autowired
+    private WebApplicationContext context;
+
+    @Before
+    public void setup() {
+	RestAssuredMockMvc.webAppContextSetup(context);
+    }
 
 }
